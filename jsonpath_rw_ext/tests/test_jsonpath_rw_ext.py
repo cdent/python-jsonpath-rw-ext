@@ -38,6 +38,20 @@ class TestJsonpath_rw_ext(testscenarios.WithScenarios,
                                                'cat': 'meow'}},
                              target=['cat', 'cow', 'horse'])),
 
+        # These ought to work but just raises an error in the test
+        # handling.
+        ('sorted_list_continue', dict(string='objects.`sorted`[0]',
+                                      data={'objects': ['alpha', 'gamma', 'beta']},
+                                      target='alpha')),
+
+
+        # Is this the correct expectation?
+        ('sorted_dict_continue', dict(string='objects.`sorted`[0]',
+                                      data={'objects': {'cow': 'moo', 'horse': 'neigh',
+                                                        'cat': 'meow'}},
+                                      target='moo')),
+        # or this?                    target='cow')),
+
         ('len_list', dict(string='objects.`len`',
                           data={'objects': ['alpha', 'gamma', 'beta']},
                           target=3)),
