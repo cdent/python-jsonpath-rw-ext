@@ -49,7 +49,7 @@ To replace the jsonpath_rw parser by this one with::
 Or::
 
     from jsonpath_rw_ext import parser
-    parser.ExtentedJsonPathParser().parse("$.foo").find(...)
+    parser.ExtendedJsonPathParser().parse("$.foo").find(...)
 
 
 The jsonpath classes are not part of the public API, because the name/structure 
